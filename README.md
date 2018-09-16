@@ -21,7 +21,7 @@ elasticproxy 代理elasticsearch 提供给kibana 调用， 可以在该项目中
 > - 切换到elasticsearch 命名空间
 > - `kubectl run elasticproxy --image=zhangyuming/elasticproxy --command -- elasticproxy -elastic_host elasticsearch:9200` 
 > - `kubectl expose deployment elasticproxy --target-port=8899 --port=8899 `
-> - 切换kibana elasticsearch地址指向
+> - 切换kibana elasticsearch地址指向 `elasticproxy:8899`
 
 
 
