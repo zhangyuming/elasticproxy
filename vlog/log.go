@@ -26,17 +26,17 @@ func SetLogLevel(level string)  {
 func Info(v ...interface{})  {
 
 	if Loglevel != L_E {
-		log.Println("INFO: ", v...)
+		log.Println("INFO: ", v)
 	}
 }
 
 func Debug( v ...interface{})  {
 	if Loglevel == L_D{
-		log.Println("DEBUG: ",v...)
+		log.Println("DEBUG: ",v)
 	}
 
 }
 
 func Error(v ...interface{})  {
-		log.Fatalln("ERROR: ",v...)
+		log.Fatalln("ERROR: ",v)
 }
