@@ -11,5 +11,4 @@ RUN cd src/elasticproxy && go build -o elasticproxy
 
 From alpine:3.8
 COPY --from=builder /go/src/elasticproxy/elasticproxy /usr/bin/elasticproxy
-CMD ["/usr/bin/elasticproxy"]
-~                             
+CMD ["/usr/bin/elasticproxy"]                          
