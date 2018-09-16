@@ -19,7 +19,7 @@ var localport = "8899"
 
 func main() {
 
-	flag.StringVar(&loglevel, "d", "debug", "log level [info|debug|error]")
+	flag.StringVar(&loglevel, "d", "info", "log level [info|debug|error]")
 	flag.StringVar(&elastic_host, "elastic_host", "elasticsearch:9200", " elastic address")
 	flag.StringVar(&localport, "p", "8899", "service port")
 	flag.Parse()
