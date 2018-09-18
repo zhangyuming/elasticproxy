@@ -24,4 +24,24 @@ elasticproxy 代理elasticsearch 提供给kibana 调用， 可以在该项目中
 > - 切换kibana elasticsearch地址指向 `elasticproxy:8899`
 
 
+## 项目介绍  
+- proxy 项目的一些实体以及接口定义 
+- runner 真正修改报文的方法 
+- vlog 日志服务 
+- main.go 程序入口 
+### 开发方式
+例如你需要修改请求报文 
+- 在runner包下创建一个结构体实体，且该实体需要实现 RequestModifyer接口, 该接口在proxy包中定义
+```
+type RequestModifyer interface {
+	RequestModify(request *LocalRequest)
+}
+```
+- 在runner包的init方法中注册你的实体， 当前init方法在runner包中的kibana.go 中
+```
+func init() {
+	proxy.RegistryRequestModifyer(&kibana{})
+}
+```
 
+在main.go中会逐个执行注册的服务并把修改后的报文发送出去
