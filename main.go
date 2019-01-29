@@ -76,6 +76,8 @@ func main() {
 			req.Header = localRequest.Header
 			req.Body = ioutil.NopCloser(strings.NewReader(localRequest.Body))
 			req.ContentLength = int64(len(localRequest.Body))
+			req.Host = r.Host
+
 
 		}
 		proxy := &httputil.ReverseProxy{Director: director}
